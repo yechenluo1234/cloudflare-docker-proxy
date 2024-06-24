@@ -1,6 +1,3 @@
-import DOCS from './help.html'
- 
-
 
 addEventListener("fetch", (event) => {
   event.passThroughOnException();
@@ -155,14 +152,4 @@ async function fetchToken(wwwAuthenticate, scope, authorization) {
     headers.set("Authorization", authorization);
   }
   return await fetch(url, { method: "GET", headers: headers });
-}
-
-// return docs
-if (url.pathname === "/") {
-  return new Response(DOCS, {
-    status: 200,
-    headers: {
-      "content-type": "text/html"
-    }
-  });
 }
